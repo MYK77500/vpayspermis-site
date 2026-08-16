@@ -157,6 +157,7 @@ strong { font-weight: 700; color: var(--noir); }
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
 }
 .bouton:hover { transform: translateY(-2px); }
+.bouton svg { width: 18px; height: 18px; flex: none; }
 .bouton--principal { background: var(--or); color: var(--noir); box-shadow: var(--ombre-m); }
 .bouton--principal:hover { background: var(--or-clair); }
 .bouton--secondaire { background: var(--noir); color: #fff; }
@@ -709,6 +710,108 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
   .fiche { padding: 20px; }
   .fiche__liste > div { grid-template-columns: 1fr; gap: 4px; }
   .resultats { grid-template-columns: 1fr; }
+}
+
+/* ---------- 11. Structure type « auto-école » ----------------------------- */
+
+/* Barre de contact, au-dessus de l'en-tête */
+.barre-contact {
+  background: var(--noir-profond);
+  color: #cfcfcf;
+  font-size: .93rem;
+}
+.barre-contact .conteneur {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 6px 22px; padding-block: 10px; text-align: center;
+}
+.barre-contact a { color: #fff; text-decoration: none; font-weight: 600; }
+.barre-contact a:hover { color: var(--or-clair); }
+.barre-contact svg { width: 15px; height: 15px; vertical-align: -2px; color: var(--or); }
+
+/* En-tête : logo, navigation centrale, téléphone en bouton */
+.entete .conteneur { gap: 16px; }
+.entete__actions { display: flex; align-items: center; gap: 12px; }
+.bouton--tel {
+  background: var(--or); color: var(--noir);
+  padding: 12px 20px; white-space: nowrap; font-size: .98rem;
+}
+.bouton--tel:hover { background: var(--or-clair); }
+.bouton--tel svg { width: 17px; height: 17px; }
+
+/* Menus déroulants */
+.nav li { position: relative; }
+.nav__bouton {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 10px 11px; border: 0; background: none;
+  font: inherit; font-weight: 600; font-size: .93rem; color: var(--texte);
+  border-radius: var(--rayon-s); cursor: pointer;
+}
+.nav__bouton:hover { background: var(--gris-100); }
+.nav__bouton svg { width: 12px; height: 12px; transition: transform var(--transition); }
+.nav__bouton[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav .nav__sous {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 20;
+  min-width: 268px; padding: 8px;
+  background: #fff; border: 1px solid var(--gris-200);
+  border-top: 3px solid var(--or);
+  border-radius: var(--rayon-s); box-shadow: var(--ombre-m);
+  display: none;
+}
+.nav li:hover > .nav__sous,
+.nav__bouton[aria-expanded="true"] + .nav__sous { display: block; }
+.nav .nav__sous li { display: block; }
+.nav__sous a { display: block; padding: 11px 14px; font-weight: 500; font-size: .94rem; border-radius: var(--rayon-s); }
+.nav__sous a:hover { background: var(--creme); color: var(--noir); }
+
+/* Héros avec photo de fond */
+.heros--photo { position: relative; padding: clamp(72px, 12vw, 150px) 0; overflow: hidden; }
+.heros--photo::before {
+  content: ""; position: absolute; inset: 0;
+  background-image: var(--photo, none);
+  background-size: cover; background-position: center;
+  filter: grayscale(.15);
+}
+.heros--photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 45%, rgba(0,0,0,.42) 100%);
+  height: auto;
+}
+.heros--photo > .conteneur { position: relative; z-index: 2; }
+.heros--photo h1 { color: #fff; max-width: 20ch; }
+.heros--photo .heros__accroche { color: #d8d8d8; max-width: 52ch; }
+.heros mark {
+  background: none; color: var(--or-clair);
+  border-bottom: 2px solid var(--or); padding-bottom: 1px;
+}
+
+/* Sections alternées texte / image */
+.duo--inverse > div:first-child { order: 2; }
+.duo__visuel img { border-radius: var(--rayon-m); box-shadow: var(--ombre-m); width: 100%; }
+.duo p a { color: var(--noir-clair); font-weight: 600; }
+
+/* Pied de page à quatre colonnes, avec horaires */
+.pied__grille { grid-template-columns: 1.1fr 1.1fr 1fr 1fr; }
+.pied table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.pied table th { text-align: left; font-weight: 600; color: #cfcfcf; padding: 4px 10px 4px 0; }
+.pied table td { padding: 4px 0; text-align: right; color: #a3a3a3; white-space: nowrap; }
+.pied__mentions { font-size: .89rem; line-height: 1.75; }
+.pied__reseaux { display: flex; gap: 12px; margin-top: 16px; }
+.pied__reseaux a {
+  width: 36px; height: 36px; display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.18); border-radius: 50%;
+}
+.pied__reseaux svg { width: 17px; height: 17px; }
+
+@media (max-width: 980px) {
+  .pied__grille { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 760px) {
+  .entete__actions .bouton--tel { display: none; }
+  .barre-contact .conteneur { padding-block: 8px; font-size: .85rem; }
+  .nav .nav__sous { position: static; display: block; box-shadow: none; border: 0; border-left: 2px solid var(--or); border-radius: 0; margin: 0 0 8px 12px; padding: 0; min-width: 0; }
+  .nav__bouton { width: 100%; justify-content: space-between; }
+  .nav__bouton svg { display: none; }
+  .duo--inverse > div:first-child { order: 0; }
 }
 
 @media print {

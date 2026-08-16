@@ -35,6 +35,29 @@
     });
   }
 
+  /* --- Menus déroulants de la navigation ------------------------------ */
+  var boutonsMenu = document.querySelectorAll(".nav__bouton");
+  boutonsMenu.forEach(function (bouton) {
+    bouton.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var ouvert = bouton.getAttribute("aria-expanded") === "true";
+      boutonsMenu.forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+      bouton.setAttribute("aria-expanded", String(!ouvert));
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav__bouton")) {
+      boutonsMenu.forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      boutonsMenu.forEach(function (b) { b.setAttribute("aria-expanded", "false"); });
+    }
+  });
+
   /* --- Ombre de l'en-tête au défilement ------------------------------ */
   var entete = document.querySelector(".entete");
   if (entete) {
