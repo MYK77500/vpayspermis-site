@@ -767,13 +767,15 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
 .heros--photo { position: relative; padding: clamp(72px, 12vw, 150px) 0; overflow: hidden; }
 .heros--photo::before {
   content: ""; position: absolute; inset: 0;
+  /* annule le halo doré de .heros::before, qui limitait la zone à 720 px */
+  width: auto; height: auto; max-width: none; max-height: none;
   background-image: var(--photo, none);
-  background-size: cover; background-position: center;
-  filter: grayscale(.15);
+  background-size: cover; background-position: right center;
+  filter: grayscale(.35) brightness(.45);
 }
 .heros--photo::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.78) 45%, rgba(0,0,0,.42) 100%);
+  background: linear-gradient(100deg, rgba(0,0,0,.93) 0%, rgba(0,0,0,.8) 42%, rgba(0,0,0,.55) 100%);
   height: auto;
 }
 .heros--photo > .conteneur { position: relative; z-index: 2; }

@@ -1,8 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Nos locaux">
-  <rect width="800" height="600" fill="#eef2f7"/>
-  <path d="M0 450h800v150H0z" fill="#dfe6ef"/>
-  <circle cx="400" cy="276" r="34" fill="#0d2440" opacity=".12"/>
-  <path d="M384 276h32M400 260v32" stroke="#0d2440" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
-  <text x="400" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#5a6b81">Nos locaux</text>
-  <text x="400" y="372" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#97a4b6">Visuel de remplacement — à remplacer par une photo</text>
+<!-- Visuel provisoire : façade stylisée, sans texte, destinée aux fonds de
+     bandeau. À remplacer par une photo de l'agence. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Façade de l'auto-école">
+  <defs>
+    <linearGradient id="ciel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93a7bd"/><stop offset="100%" stop-color="#54657a"/>
+    </linearGradient>
+    <linearGradient id="or" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e2a0"/><stop offset="55%" stop-color="#c9a227"/><stop offset="100%" stop-color="#8a6d12"/>
+    </linearGradient>
+    <linearGradient id="vitre" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#46586c"/><stop offset="45%" stop-color="#2a3644"/><stop offset="100%" stop-color="#55697f"/>
+    </linearGradient>
+    <linearGradient id="mur" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a4553"/><stop offset="100%" stop-color="#232b35"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#ciel)"/>
+  <!-- immeuble -->
+  <rect x="0" y="60" width="1200" height="620" fill="url(#mur)"/>
+  <g fill="#4c5b6d" opacity=".55">
+    <rect x="80" y="90" width="150" height="90" rx="6"/>
+    <rect x="290" y="90" width="150" height="90" rx="6"/>
+    <rect x="500" y="90" width="150" height="90" rx="6"/>
+    <rect x="710" y="90" width="150" height="90" rx="6"/>
+    <rect x="920" y="90" width="150" height="90" rx="6"/>
+  </g>
+  <!-- bandeau d'enseigne -->
+  <rect x="40" y="220" width="1120" height="110" rx="6" fill="#12171e"/>
+  <rect x="40" y="220" width="1120" height="6" fill="url(#or)"/>
+  <rect x="40" y="324" width="1120" height="6" fill="url(#or)"/>
+  <!-- vitrine -->
+  <rect x="40" y="350" width="1120" height="330" fill="url(#vitre)"/>
+  <g stroke="#1a222b" stroke-width="10" fill="none"><path d="M400 350v330M800 350v330"/></g>
+  <!-- panneaux dorés en vitrine -->
+  <g fill="url(#or)" opacity=".92">
+    <rect x="90" y="400" width="130" height="96" rx="10"/>
+    <rect x="240" y="400" width="130" height="96" rx="10"/>
+    <rect x="450" y="400" width="130" height="96" rx="10"/>
+    <rect x="610" y="400" width="130" height="96" rx="10"/>
+    <rect x="840" y="400" width="130" height="96" rx="10"/>
+    <rect x="990" y="400" width="130" height="96" rx="10"/>
+  </g>
+  <rect x="90" y="540" width="1030" height="70" rx="10" fill="#12171e" opacity=".85"/>
+  <!-- porte -->
+  <rect x="520" y="540" width="160" height="140" rx="4" fill="#1a222b"/>
+  <!-- trottoir -->
+  <rect x="0" y="680" width="1200" height="120" fill="#6d6d6d"/>
+  <rect x="0" y="680" width="1200" height="6" fill="#8a8a8a"/>
 </svg>

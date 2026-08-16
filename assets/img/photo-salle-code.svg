@@ -1,0 +1,32 @@
+<!-- Visuel provisoire : salle de code. À remplacer par une photo. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Salle de code">
+  <defs>
+    <linearGradient id="m" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f5f0"/><stop offset="100%" stop-color="#e3e0d9"/></linearGradient>
+    <linearGradient id="o3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e2a0"/><stop offset="60%" stop-color="#c9a227"/><stop offset="100%" stop-color="#8a6d12"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#m)"/>
+  <!-- écran -->
+  <rect x="200" y="90" width="800" height="440" rx="14" fill="#101010"/>
+  <rect x="224" y="114" width="752" height="392" rx="8" fill="#16202b"/>
+  <circle cx="600" cy="250" r="86" fill="none" stroke="url(#o3)" stroke-width="16"/>
+  <path d="M600 196v66l44 26" stroke="#fff" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <g fill="#e3e0d9" opacity=".9">
+    <rect x="300" y="380" width="600" height="18" rx="9"/>
+    <rect x="300" y="418" width="440" height="18" rx="9"/>
+  </g>
+  <rect x="300" y="456" width="180" height="30" rx="8" fill="url(#o3)"/>
+  <!-- rangées de tables -->
+  <g fill="#101010" opacity=".82">
+    <rect x="170" y="600" width="260" height="18" rx="9"/>
+    <rect x="470" y="600" width="260" height="18" rx="9"/>
+    <rect x="770" y="600" width="260" height="18" rx="9"/>
+    <rect x="120" y="690" width="300" height="18" rx="9"/>
+    <rect x="460" y="690" width="300" height="18" rx="9"/>
+    <rect x="800" y="690" width="300" height="18" rx="9"/>
+  </g>
+  <g fill="#5f5a52" opacity=".7">
+    <circle cx="240" cy="565" r="26"/><circle cx="360" cy="565" r="26"/>
+    <circle cx="540" cy="565" r="26"/><circle cx="660" cy="565" r="26"/>
+    <circle cx="840" cy="565" r="26"/><circle cx="960" cy="565" r="26"/>
+  </g>
+</svg>

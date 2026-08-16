@@ -1,0 +1,25 @@
+<!-- Visuel provisoire : plateau moto. À remplacer par une photo. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Formation moto sur plateau">
+  <defs>
+    <linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7f8c9b"/><stop offset="100%" stop-color="#41505f"/></linearGradient>
+    <linearGradient id="o4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6e2a0"/><stop offset="60%" stop-color="#c9a227"/><stop offset="100%" stop-color="#8a6d12"/></linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#p)"/>
+  <path d="M0 520h1200v280H0z" fill="#4a4a4a"/>
+  <g stroke="#fff" stroke-width="6" opacity=".25"><path d="M0 620h1200M0 700h1200"/></g>
+  <!-- plots -->
+  <g fill="#c0392b">
+    <path d="M170 700l26-70h18l26 70z"/><path d="M470 700l26-70h18l26 70z"/>
+    <path d="M770 700l26-70h18l26 70z"/><path d="M1030 700l26-70h18l26 70z"/>
+  </g>
+  <!-- moto -->
+  <g transform="translate(330 250)">
+    <g fill="#0a0a0a"><circle cx="70" cy="250" r="82"/><circle cx="410" cy="250" r="82"/></g>
+    <g fill="#6f6f6f"><circle cx="70" cy="250" r="30"/><circle cx="410" cy="250" r="30"/></g>
+    <path d="M70 250 158 140h134l118 110" fill="none" stroke="url(#o4)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M146 132h172l-34 56H180z" fill="url(#o4)"/>
+    <path d="M410 250 344 112" fill="none" stroke="#dcdcdc" stroke-width="20" stroke-linecap="round"/>
+    <path d="M300 96h96" fill="none" stroke="#dcdcdc" stroke-width="20" stroke-linecap="round"/>
+    <path d="M70 250h96" fill="none" stroke="#dcdcdc" stroke-width="18" stroke-linecap="round"/>
+  </g>
+</svg>
