@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Leçon de conduite">
+  <rect width="800" height="600" fill="#eef2f7"/>
+  <path d="M0 450h800v150H0z" fill="#dfe6ef"/>
+  <circle cx="400" cy="276" r="34" fill="#0d2440" opacity=".12"/>
+  <path d="M384 276h32M400 260v32" stroke="#0d2440" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
+  <text x="400" y="346" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="700" fill="#5a6b81">Leçon de conduite</text>
+  <text x="400" y="372" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#97a4b6">Visuel de remplacement — à remplacer par une photo</text>
+</svg>

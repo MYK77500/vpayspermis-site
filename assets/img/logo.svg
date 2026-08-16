@@ -1,0 +1,32 @@
+<!-- PLACEHOLDER — approximation du logo réel (lettrage doré à liseré, biseau).
+     Le tracé scripte d'origine n'est pas reproductible sans sa police : ce
+     fichier doit être remplacé par le vectoriel du client. Voir README.md. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" role="img" aria-label="V-Pays Permis, auto moto école">
+  <defs>
+    <linearGradient id="or" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbeec2"/>
+      <stop offset="38%" stop-color="#d8b344"/>
+      <stop offset="62%" stop-color="#a9821a"/>
+      <stop offset="100%" stop-color="#f0dc9a"/>
+    </linearGradient>
+    <linearGradient id="orSombre" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8a6d12"/>
+      <stop offset="100%" stop-color="#5d4708"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ombre portée dorée, pour le relief -->
+  <g transform="translate(3 3)" opacity=".85">
+    <text x="12" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-style="italic"
+          font-weight="700" fill="url(#orSombre)">V-Pays</text>
+    <text x="14" y="114" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900"
+          letter-spacing="5" fill="url(#orSombre)">PERMIS</text>
+  </g>
+
+  <text x="12" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-style="italic"
+        font-weight="700" fill="#101010" stroke="url(#or)" stroke-width="2.4" paint-order="stroke">V-Pays</text>
+  <text x="14" y="114" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900"
+        letter-spacing="5" fill="#101010" stroke="url(#or)" stroke-width="2" paint-order="stroke">PERMIS</text>
+  <text x="212" y="142" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900"
+        letter-spacing="2.6" fill="#101010" stroke="url(#or)" stroke-width="1.1" paint-order="stroke">AUTO MOTO ÉCOLE</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 460" role="img" aria-label="Illustration : véhicule et moto d'auto-école">
+  <defs>
+    <linearGradient id="fond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262626"/><stop offset="1" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="or2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6e2a0"/><stop offset="60%" stop-color="#c9a227"/><stop offset="100%" stop-color="#8a6d12"/>
+    </linearGradient>
+    <linearGradient id="carrosserie2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d6d6d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="460" rx="24" fill="url(#fond)"/>
+  <circle cx="516" cy="92" r="46" fill="url(#or2)" opacity=".16"/>
+  <circle cx="516" cy="92" r="24" fill="url(#or2)" opacity=".3"/>
+  <path d="M0 336h640v124H0z" fill="#000"/>
+  <path d="M0 336h640v5H0z" fill="url(#or2)" opacity=".75"/>
+  <g stroke="#e8c96a" stroke-width="7" stroke-linecap="round" opacity=".5">
+    <path d="M40 408h64M160 408h64M280 408h64M400 408h64M520 408h64"/>
+  </g>
+
+  <!-- voiture -->
+  <g transform="translate(58 168)">
+    <rect x="0" y="74" width="330" height="74" rx="24" fill="url(#carrosserie2)"/>
+    <path d="M64 76c12-36 26-48 52-50h86c28 4 43 17 56 50z" fill="#c8c8c8"/>
+    <path d="M78 72c10-27 20-37 40-39h36v39zM166 33h36c22 4 34 14 42 39H166z" fill="#1c1c1c"/>
+    <rect x="98" y="100" width="146" height="24" rx="7" fill="url(#or2)"/>
+    <text x="171" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#101010">AUTO ÉCOLE</text>
+    <rect x="6" y="88" width="22" height="16" rx="6" fill="#f6e2a0"/>
+    <rect x="302" y="88" width="22" height="16" rx="6" fill="#8a1b1b"/>
+    <g fill="#0a0a0a"><circle cx="80" cy="150" r="30"/><circle cx="256" cy="150" r="30"/></g>
+    <g fill="#7a7a7a"><circle cx="80" cy="150" r="12"/><circle cx="256" cy="150" r="12"/></g>
+    <rect x="124" y="2" width="94" height="26" rx="7" fill="url(#or2)"/>
+    <text x="171" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="800" fill="#101010">ÉCOLE</text>
+  </g>
+
+  <!-- moto -->
+  <g transform="translate(424 232)">
+    <g fill="#0a0a0a"><circle cx="30" cy="84" r="30"/><circle cx="152" cy="84" r="30"/></g>
+    <g fill="#6f6f6f"><circle cx="30" cy="84" r="11"/><circle cx="152" cy="84" r="11"/></g>
+    <path d="M30 84 62 44h48l42 40" fill="none" stroke="url(#or2)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M56 40h62l-12 20H66z" fill="url(#or2)"/>
+    <path d="M152 84 128 34" fill="none" stroke="#dcdcdc" stroke-width="8" stroke-linecap="round"/>
+    <path d="M112 28h34" fill="none" stroke="#dcdcdc" stroke-width="8" stroke-linecap="round"/>
+    <path d="M30 84h34" fill="none" stroke="#dcdcdc" stroke-width="7" stroke-linecap="round"/>
+  </g>
+</svg>
