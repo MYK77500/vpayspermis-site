@@ -723,6 +723,76 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
   .resultats { grid-template-columns: 1fr; }
 }
 
+/* ---------- 11a. Carte « offre d'ouverture » du bandeau d'accueil --------- */
+.heros--offre .heros__grille { grid-template-columns: 1.05fr .95fr; align-items: center; }
+.offre-carte {
+  border: 2px solid var(--or);
+  border-radius: var(--rayon-l);
+  overflow: hidden;
+  background: rgba(15, 15, 17, .88);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+  backdrop-filter: blur(2px);
+  max-width: 460px;
+  margin-left: auto;
+}
+.offre-carte__tete {
+  background: var(--degrade-or);
+  color: #14110a;
+  text-align: center;
+  padding: 13px 18px;
+  font-weight: 800;
+  font-size: .95rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.offre-carte__corps { padding: 30px 30px 32px; text-align: center; }
+.offre-carte__prix {
+  display: block;
+  font-size: clamp(3.4rem, 7vw, 4.6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -.02em;
+}
+.offre-carte__sous {
+  display: block;
+  color: var(--or-clair);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .84rem;
+  margin: 12px 0 22px;
+}
+.offre-carte ul {
+  list-style: none; padding: 0; margin: 0 0 24px;
+  text-align: left; display: grid; gap: 11px;
+}
+.offre-carte li {
+  position: relative; padding-left: 30px;
+  color: #e6e6e6; font-size: .98rem;
+}
+.offre-carte strong { color: #fff; font-weight: 700; }
+.offre-carte li::before {
+  content: ""; position: absolute; left: 0; top: .3em;
+  width: 20px; height: 20px; border-radius: 50%;
+  /* deux couches : la coche par-dessus le dégradé doré */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2314110a' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E"), var(--degrade-or);
+  background-position: center, center;
+  background-size: 12px, cover;
+  background-repeat: no-repeat, no-repeat;
+}
+.offre-carte__places {
+  display: block; margin-top: 16px;
+  color: #a8a8a8; font-size: .87rem;
+}
+.offre-carte__places b { color: var(--or-clair); }
+
+@media (max-width: 980px) {
+  .heros--offre .heros__grille { grid-template-columns: 1fr; }
+  .offre-carte { margin: 0 auto; max-width: 520px; }
+  .heros--offre .heros__visuel { order: -1; margin-bottom: 34px; }
+}
+
 /* ---------- 11b. Cartes tarifaires, d'après le flyer ---------------------- */
 .grille-formules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .tarif-carte {
