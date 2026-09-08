@@ -16,10 +16,12 @@
 
 /* ---------- 1. Design tokens ---------- */
 :root {
-  --noir: #101010;
-  --noir-clair: #262626;
-  --noir-profond: #000000;
+  --noir: #0f0f11;
+  --noir-clair: #23232a;
+  --noir-profond: #0b0b0d;
   --or: #c9a227;
+  --or-fonce: #8a6d12;
+  --degrade-or: linear-gradient(180deg, #f7e6b0 0%, #d9b451 42%, #a5811d 100%);
   --or-clair: #e8c96a;
   --feu-vert: #16a34a;
   --blanc: #ffffff;
@@ -39,11 +41,11 @@
   --ombre-m: 0 4px 12px rgba(0, 0, 0, .08), 0 12px 32px rgba(0, 0, 0, .08);
   --ombre-l: 0 20px 48px rgba(0, 0, 0, .16);
 
-  --largeur: 1160px;
+  --largeur: 1240px;
   --gouttiere: 24px;
 
   --police: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
-  --police-titre: Georgia, "Times New Roman", serif;
+  --police-titre: "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
   --transition: 180ms cubic-bezier(.4, 0, .2, 1);
 }
 
@@ -64,12 +66,14 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--police-titre);
-  line-height: 1.14;
+  line-height: 1.16;
   margin: 0 0 .6em;
   color: var(--noir);
-  font-weight: 700;
-  letter-spacing: -.015em;
+  font-weight: 800;
+  letter-spacing: -.01em;
 }
+h2 { text-transform: uppercase; letter-spacing: .03em; }
+.entete-section h2 { letter-spacing: .05em; }
 h1 { font-size: clamp(2.2rem, 5.2vw, 3.6rem); }
 h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
 h3 { font-size: 1.25rem; }
@@ -106,6 +110,13 @@ strong { font-weight: 700; color: var(--noir); }
 
 .entete-section { max-width: 680px; margin: 0 auto clamp(32px, 5vw, 56px); text-align: center; }
 .entete-section p { color: var(--gris-600); font-size: 1.05rem; margin-bottom: 0; }
+.entete-section h2 {
+  display: flex; align-items: center; justify-content: center; gap: 22px;
+}
+.entete-section h2::before, .entete-section h2::after {
+  content: ""; height: 2px; flex: 1 1 0; max-width: 90px;
+  background: var(--degrade-or);
+}
 .section--noir .entete-section p { color: #a8a8a8; }
 
 .grille { display: grid; gap: 24px; }
@@ -131,8 +142,8 @@ strong { font-weight: 700; color: var(--noir); }
 
 /* ---------- 4. Composants ---------- */
 .filet {
-  width: 64px; height: 3px;
-  background: linear-gradient(90deg, var(--or-clair), var(--or));
+  width: 72px; height: 3px;
+  background: linear-gradient(90deg, #f7e6b0, #c9a227, #8a6d12);
   border: 0; margin: 0 0 22px;
 }
 .entete-section .filet { margin-inline: auto; }
@@ -158,8 +169,8 @@ strong { font-weight: 700; color: var(--noir); }
 }
 .bouton:hover { transform: translateY(-2px); }
 .bouton svg { width: 18px; height: 18px; flex: none; }
-.bouton--principal { background: var(--or); color: var(--noir); box-shadow: var(--ombre-m); }
-.bouton--principal:hover { background: var(--or-clair); }
+.bouton--principal { background: var(--degrade-or); color: #14110a; box-shadow: var(--ombre-m); }
+.bouton--principal:hover { background: linear-gradient(180deg, #fff0c8 0%, #e7c669 42%, #b8912a 100%); }
 .bouton--secondaire { background: var(--noir); color: #fff; }
 .bouton--secondaire:hover { background: var(--noir-clair); }
 .bouton--fantome { background: transparent; border-color: currentColor; color: var(--noir); }
@@ -252,15 +263,16 @@ strong { font-weight: 700; color: var(--noir); }
   min-height: 86px;
 }
 .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--noir); }
-.logo img { width: auto; height: 62px; flex: none; }
-.pied .logo img { height: 72px; }
+.logo img { width: auto; height: 46px; flex: none; }
+.pied .logo img { height: 118px; }
 .logo__texte b { display: block; font-size: 1.12rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; }
 .logo__texte span { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gris-600); }
 
 .nav ul { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
 .nav a {
   display: block;
-  padding: 10px 11px;
+  white-space: nowrap;
+  padding: 10px 9px;
   border-radius: var(--rayon-s);
   color: var(--texte);
   text-decoration: none;
@@ -712,6 +724,98 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
   .resultats { grid-template-columns: 1fr; }
 }
 
+/* ---------- 11b. Cartes tarifaires, d'après le flyer ---------------------- */
+.grille-formules { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.tarif-carte {
+  border: 2px solid var(--or-fonce);
+  border-radius: var(--rayon-m);
+  overflow: hidden;
+  background: #14141a;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.tarif-carte:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.5); }
+.tarif-carte__tete {
+  background: var(--degrade-or);
+  color: #14110a;
+  font-weight: 800;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  padding: 10px 12px;
+  text-transform: uppercase;
+}
+.tarif-carte__corps { padding: 20px 16px 24px; }
+.tarif-carte__mention {
+  display: block; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase;
+  color: #b9b9b9; margin-bottom: 10px;
+}
+.tarif-carte__prix {
+  display: block; font-size: clamp(1.6rem, 3.4vw, 2.1rem); font-weight: 800;
+  color: #fff; letter-spacing: -.01em;
+}
+.tarif-groupe__titre {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  color: #fff; font-size: 1.2rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: .05em; margin: 0 0 22px;
+}
+.tarif-groupe__titre b { color: var(--or); font-weight: 800; }
+.tarif-groupe__pastille {
+  width: 54px; height: 54px; flex: none; border-radius: 50%;
+  border: 2px solid var(--or); display: grid; place-items: center;
+  color: var(--or); font-weight: 800; font-size: 1.2rem;
+}
+
+/* bandeau des avantages, repris du flyer */
+.avantages {
+  border: 2px solid var(--or-fonce); border-radius: var(--rayon-l);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: #14141a;
+}
+.avantages div { padding: 20px 18px; display: flex; align-items: center; gap: 14px; }
+.avantages div + div { border-left: 1px solid rgba(201,162,39,.3); }
+.avantages .rond {
+  width: 42px; height: 42px; flex: none; border-radius: 50%;
+  background: var(--degrade-or); display: grid; place-items: center; color: #14110a;
+}
+.avantages .rond svg { width: 20px; height: 20px; }
+.avantages b { display: block; color: #fff; font-size: .84rem; letter-spacing: .05em; text-transform: uppercase; line-height: 1.3; }
+.avantages span { display: block; color: var(--or); font-size: .84rem; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; }
+
+/* bandeau « offre de lancement » */
+.offre {
+  display: inline-flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  border: 2px solid var(--or); border-radius: var(--rayon-m);
+  background: rgba(201,162,39,.1);
+  padding: 14px 22px; margin-bottom: 26px;
+}
+.offre__badge {
+  background: var(--degrade-or); color: #14110a;
+  font-weight: 800; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: var(--rayon-pill);
+}
+.offre b { color: #fff; font-size: 1.15rem; }
+.offre span { color: #d8d8d8; font-size: .95rem; }
+
+/* signature manuscrite du flyer */
+.slogan {
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+  color: var(--or); font-size: 1.2rem;
+}
+
+/* liseré doré en angle, motif du flyer */
+
+
+@media (max-width: 980px) {
+  .grille-formules { grid-template-columns: repeat(2, 1fr); }
+  .avantages { grid-template-columns: repeat(2, 1fr); }
+  .avantages div:nth-child(3) { border-left: 0; }
+}
+@media (max-width: 560px) {
+  .grille-formules { grid-template-columns: 1fr; }
+  .avantages { grid-template-columns: 1fr; }
+  .avantages div + div { border-left: 0; border-top: 1px solid rgba(201,162,39,.3); }
+}
+
 /* ---------- 11. Structure type « auto-école » ----------------------------- */
 
 /* Barre de contact, au-dessus de l'en-tête */
@@ -732,8 +836,8 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
 .entete .conteneur { gap: 16px; }
 .entete__actions { display: flex; align-items: center; gap: 12px; }
 .bouton--tel {
-  background: var(--or); color: var(--noir);
-  padding: 12px 20px; white-space: nowrap; font-size: .98rem;
+  background: var(--degrade-or); color: #14110a;
+  padding: 11px 16px; white-space: nowrap; font-size: .98rem;
 }
 .bouton--tel:hover { background: var(--or-clair); }
 .bouton--tel svg { width: 17px; height: 17px; }
@@ -742,7 +846,8 @@ table.tarifs--infos th[scope="row"] { width: 34%; color: var(--noir); }
 .nav li { position: relative; }
 .nav__bouton {
   display: inline-flex; align-items: center; gap: 6px;
-  padding: 10px 11px; border: 0; background: none;
+  white-space: nowrap;
+  padding: 10px 9px; border: 0; background: none;
   font: inherit; font-weight: 600; font-size: .93rem; color: var(--texte);
   border-radius: var(--rayon-s); cursor: pointer;
 }

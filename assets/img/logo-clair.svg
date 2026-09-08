@@ -1,32 +1,39 @@
-<!-- PLACEHOLDER (fond sombre) — approximation du logo réel (lettrage doré à liseré, biseau).
-     Le tracé scripte d'origine n'est pas reproductible sans sa police : ce
-     fichier doit être remplacé par le vectoriel du client. Voir README.md. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" role="img" aria-label="V-Pays Permis, auto moto école">
+<!-- Logo V-Pays Permis (fond sombre), redessiné d'après le flyer officiel du client :
+     monogramme VP traversé par une route, lettrage script, baseline.
+     À remplacer par le fichier vectoriel d'origine dès réception. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" role="img" aria-label="V-Pays Permis, auto moto école">
   <defs>
-    <linearGradient id="or" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#fbeec2"/>
-      <stop offset="38%" stop-color="#d8b344"/>
-      <stop offset="62%" stop-color="#a9821a"/>
-      <stop offset="100%" stop-color="#f0dc9a"/>
-    </linearGradient>
-    <linearGradient id="orSombre" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#8a6d12"/>
-      <stop offset="100%" stop-color="#5d4708"/>
+    <linearGradient id="or" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#f7e6b0"/>
+      <stop offset="28%" stop-color="#d9b451"/>
+      <stop offset="55%" stop-color="#a5811d"/>
+      <stop offset="78%" stop-color="#e2c368"/>
+      <stop offset="100%" stop-color="#8a6d12"/>
     </linearGradient>
   </defs>
 
-  <!-- ombre portée dorée, pour le relief -->
-  <g transform="translate(3 3)" opacity=".85">
-    <text x="12" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-style="italic"
-          font-weight="700" fill="url(#orSombre)">V-Pays</text>
-    <text x="14" y="114" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900"
-          letter-spacing="5" fill="url(#orSombre)">PERMIS</text>
+  <!-- monogramme VP -->
+  <g transform="translate(260 96)">
+    <path d="M-118-70 -52 62 -34 62 -100-70z" fill="url(#or)"/>
+    <path d="M-52 62 14-70 -4-70 -70 62z" fill="url(#or)"/>
+    <path d="M20-70h56c34 0 56 22 56 52s-22 52-56 52H44V62H20zm24 22v40h30c18 0 28-8 28-20s-10-20-28-20z" fill="url(#or)"/>
+    <!-- route -->
+    <path d="M-16 62C-2 6 20-34 46-70h26C40-30 16 10 6 62z" fill="#ffffff"/>
+    <path d="M-2 50c10-34 26-64 44-88" stroke="#c9a227" stroke-width="3" stroke-dasharray="9 10" fill="none" opacity=".8"/>
   </g>
 
-  <text x="12" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-style="italic"
-        font-weight="700" fill="#0a0a0a" stroke="url(#or)" stroke-width="2.4" paint-order="stroke">V-Pays</text>
-  <text x="14" y="114" font-family="Arial Black, Arial, sans-serif" font-size="36" font-weight="900"
-        letter-spacing="5" fill="#0a0a0a" stroke="url(#or)" stroke-width="2" paint-order="stroke">PERMIS</text>
-  <text x="212" y="142" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900"
-        letter-spacing="2.6" fill="#0a0a0a" stroke="url(#or)" stroke-width="1.1" paint-order="stroke">AUTO MOTO ÉCOLE</text>
+  <!-- lettrage -->
+  <text x="260" y="192" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-weight="700" font-size="62" fill="url(#or)">V-Pays</text>
+  <text x="260" y="232" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-weight="700" font-size="31" letter-spacing="13" fill="#ffffff">PERMIS</text>
+
+  <!-- baseline -->
+  <g stroke="url(#or)" stroke-width="2">
+    <path d="M96 255h58M366 255h58"/>
+  </g>
+  <text x="260" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-weight="700" font-size="17" letter-spacing="6" fill="url(#or)">AUTO MOTO ÉCOLE</text>
+  <text x="260" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+        font-weight="600" font-size="12" letter-spacing="5" fill="#cfcfcf">APPRENDRE • CONDUIRE • AVANCER</text>
 </svg>

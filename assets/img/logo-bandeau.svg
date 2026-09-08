@@ -1,0 +1,25 @@
+<!-- Déclinaison horizontale du logo, pour l'en-tête. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img" aria-label="V-Pays Permis, auto moto école">
+  <defs>
+    <linearGradient id="orh" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0" stop-color="#f7e6b0"/><stop offset="28%" stop-color="#d9b451"/>
+      <stop offset="55%" stop-color="#a5811d"/><stop offset="78%" stop-color="#e2c368"/>
+      <stop offset="100%" stop-color="#8a6d12"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(120 104) scale(.74)">
+    <path d="M-118-70 -52 62 -34 62 -100-70z" fill="url(#orh)"/>
+    <path d="M-52 62 14-70 -4-70 -70 62z" fill="url(#orh)"/>
+    <path d="M20-70h56c34 0 56 22 56 52s-22 52-56 52H44V62H20zm24 22v40h30c18 0 28-8 28-20s-10-20-28-20z" fill="url(#orh)"/>
+    <path d="M-16 62C-2 6 20-34 46-70h26C40-30 16 10 6 62z" fill="#ffffff"/>
+  </g>
+  <g>
+    <text x="248" y="86" font-family="Georgia, 'Times New Roman', serif" font-style="italic"
+          font-weight="700" font-size="62" fill="url(#orh)">V-Pays</text>
+    <text x="252" y="126" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+          font-size="31" letter-spacing="13" fill="#101010">PERMIS</text>
+    <g stroke="url(#orh)" stroke-width="2"><path d="M252 158h20M470 158h20"/></g>
+    <text x="380" y="164" text-anchor="middle" font-family="Arial, Helvetica, sans-serif"
+          font-weight="700" font-size="16" letter-spacing="6" fill="url(#orh)">AUTO MOTO ÉCOLE</text>
+  </g>
+</svg>
